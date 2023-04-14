@@ -1,6 +1,7 @@
 package com.example.demo.controller.restapi;
 
 import com.example.demo.dto.RecettesDto;
+import com.example.demo.dto.RecettesRESTDto;
 import com.example.demo.service.impl.RecetteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -21,7 +22,7 @@ public class RecettesRESTController {
     }
 
     @PostMapping
-    public void postARecipe(@RequestBody RecettesDto recettesDto){
-
+    public void postARecipe(@RequestBody RecettesRESTDto recettesRESTDto){
+        _recetteService.insertPostedRecette(recettesRESTDto);
     }
 }

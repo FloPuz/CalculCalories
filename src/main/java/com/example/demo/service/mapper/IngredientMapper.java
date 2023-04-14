@@ -28,4 +28,13 @@ public class IngredientMapper {
         ingredientsDto.setRecettesDtosList(recettesDto);
         return ingredientsDto;
     }
+
+    public Ingredients ingredients(IngredientsDto ingredientsDto) {
+        if (ingredientsDto == null) {
+            return null;
+        }
+        Ingredients ingredients = new Ingredients(ingredientsDto.getNomIngredient(),ingredientsDto.getCalories());
+
+        return ingredients;
+    }
 }

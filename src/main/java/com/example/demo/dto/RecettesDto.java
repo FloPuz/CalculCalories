@@ -17,6 +17,13 @@ public class RecettesDto implements Serializable {
     //TODO Create a specific dto to store the quantity
     private List<IngredientsDto> ingredientsDtoList;
 
+
+    public RecettesDto(String nomRecette, String instructions, int nbPortions) {
+        this.nomRecette = nomRecette;
+        this.instructions = instructions;
+        this.nbPortions = nbPortions;
+    }
+
     public RecettesDto(Long id, String nomRecette, String instructions, int nbPortions) {
         this.id = id;
         this.nomRecette = nomRecette;
@@ -79,6 +86,10 @@ public class RecettesDto implements Serializable {
 
     public List<IngredientsDto> getIngredientsDtoList() {
         return ingredientsDtoList;
+    }
+
+    public void addIngredientsDto(IngredientsDto ingredientsDto){
+        this.ingredientsDtoList.add(ingredientsDto);
     }
 
     public void setIngredientsDtoList(List<IngredientsDto> ingredientsDtoList) {

@@ -19,6 +19,11 @@ public class Ingredients {
     private List<Recettes> recettes = new ArrayList<>();
 
 
+    public Ingredients(String nomIngredient, Double calories) {
+        this.nomIngredient = nomIngredient;
+        this.calories = calories;
+    }
+
     public Ingredients() {
     }
 

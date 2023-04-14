@@ -34,4 +34,22 @@ public class RecetteMapper {
 
         return recettesDto;
     }
+
+    public Recettes recettes(RecettesDto recettesDto){
+        if (recettesDto == null) {
+            return null;
+        }
+
+        List<Ingredients> ingredients = recettesDto.getIngredientsDtoList().stream()
+                .map(ingredient -> ingredientMapper.ingredients(new IngredientsDto(ingredient.getNomIngredient(),ingredient.getCalories())))
+                .collect(Collectors.toList());
+
+        Recettes recettes = new Recettes();
+        recettes.setNomRecette(recettesDto.getNomRecette());
+        recettes.setInstructions(recettesDto.getInstructions());
+        recettes.setNbPortions(recettesDto.getNbPortions());
+        recettes.setIngredients(ingredients);
+
+        return recettes;
+    }
 }
