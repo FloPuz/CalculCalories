@@ -2,6 +2,7 @@ package com.example.demo.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -16,13 +17,22 @@ public class Recettes {
     private String instructions;
     @Column(name = "nb_portions")
     private int nbPortions;
-
     @ManyToMany
     @JoinTable(
             name="recette_ingredient",
             joinColumns=@JoinColumn(name="id_recette"),
             inverseJoinColumns=@JoinColumn(name="id_ingredient"))
-    private List<Ingredients> ingredients;
+    private List<Ingredients> ingredients = new ArrayList<>();
+
+    public Recettes() {
+    }
+
+    public Recettes(Long idRecette, String nomRecette, String instructions, int nbPortions) {
+        this.idRecette = idRecette;
+        this.nomRecette = nomRecette;
+        this.instructions = instructions;
+        this.nbPortions = nbPortions;
+    }
 
     public Long getIdRecette() {
         return idRecette;
@@ -56,4 +66,11 @@ public class Recettes {
         this.nbPortions = nbPortions;
     }
 
+    public List<Ingredients> getIngredients() {
+        return ingredients;
+    }
+
+    public void setIngredients(List<Ingredients> ingredients) {
+        this.ingredients = ingredients;
+    }
 }

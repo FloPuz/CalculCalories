@@ -1,0 +1,22 @@
+<a href="/">BACK</a>
+<table border="1">
+    <thead>
+    <tr>
+        <th>Nom</th>
+        <th>Instructions</th>
+        <th>Nombre de portion</th>
+        <th>Calories par portion</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{#recettes}}
+        <tr>
+            <td>{{nomRecette}}</td>
+            <td>{{instructions}}</td>
+            <td>{{nbPortions}}</td>
+            <td>{{calorieRecette}}</td>
+            <td><a href="/ingredient/{{id}}">Ingredients de la recette {{id}} </a></td>
+        </tr>
+    {{/recettes}}
+    </tbody>
+</table>

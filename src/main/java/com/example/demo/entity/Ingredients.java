@@ -2,6 +2,7 @@ package com.example.demo.entity;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -15,7 +16,17 @@ public class Ingredients {
     @Column(name = "calories")
     private Double calories;
     @ManyToMany(mappedBy = "ingredients")
-    private List<Recettes> recettes;
+    private List<Recettes> recettes = new ArrayList<>();
+
+
+    public Ingredients() {
+    }
+
+    public Ingredients(Long idIngredient, String nomIngredient, Double calories) {
+        this.idIngredient = idIngredient;
+        this.nomIngredient = nomIngredient;
+        this.calories = calories;
+    }
 
     public Long getIdIngredient() {
         return idIngredient;

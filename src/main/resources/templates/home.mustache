@@ -1,0 +1,18 @@
+<html>
+<head>
+<title></title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"">
+</head>
+<body>
+    <a href="/recettes">Recettes</a>
+    {{#recettes}}
+        <tr>
+            <td>Recette {{nomRecette}} <a href="/recettes/{{idRecette}}"></a></td>
+        </tr>
+    {{/recettes}}
+    </br>
+    <a href="ingredients">Ingredients</a>
+
+
+</body>
+</html>
