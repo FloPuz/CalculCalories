@@ -14,8 +14,7 @@ public class RecettesDto implements Serializable {
     private int nbPortions;
     private Double calorieRecette;
 
-
-    @JsonBackReference
+    //TODO Create a specific dto to store the quantity
     private List<IngredientsDto> ingredientsDtoList;
 
     public RecettesDto(Long id, String nomRecette, String instructions, int nbPortions) {

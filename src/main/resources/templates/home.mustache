@@ -6,9 +6,13 @@
 <body>
     <a href="/recettes">Recettes</a>
     {{#recettes}}
+        <table border="1">
+        <tbody>
         <tr>
-            <td>Recette {{nomRecette}} <a href="/recettes/{{idRecette}}"></a></td>
+            <td><a href="/recettes/{{id}}">Recette {{nomRecette}} </a></td>
         </tr>
+        </tbody>
+        </table>
     {{/recettes}}
     </br>
     <a href="ingredients">Ingredients</a>
